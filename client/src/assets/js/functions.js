@@ -2,17 +2,6 @@ const stdout = document.querySelector('.stdout');
 const field = document.querySelector('#field');
 const container = document.querySelector('.container');
 
-function run(cmd) {
-    return fetch('/run/', {
-        method: 'POST',
-        body: JSON.stringify({ cmd }),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-        .then((b) => b.json());
-}
-
 function scrollToBottom() {
     stdout.scrollTo(0, stdout.scrollHeight);
 }
@@ -43,14 +32,13 @@ function focus() {
     setEndOfContenteditable(field);
 }
 
-function addLine(text, withPrefix) {
+function addLine(username, text, withPrefix) {
     const line = document.createElement('div');
-    line.innerText = `${withPrefix ? `${rootUserName}> ` : ''}${text}`;
+    line.innerText = `${withPrefix ? `${username}> ` : ''}${text}`;
     line.classList.add('line');
 
     stdout.append(line);
     field.innerHTML = '';
-
     scrollToBottom();
 }
 
@@ -67,10 +55,10 @@ field.addEventListener('keydown', async (e) => {
             e.preventDefault();
 
             if (value) {
-                addLine(value, true);
-
-                const { stdout } = await run(value) || {};
-                addLine(stdout);
+                //console.log(value)
+                addLine(rootUserName, value, true);
+                sendMessage(rootUserName, value, true)
+                //const { stdout } = await run(value) || {};
             }
             break;
 

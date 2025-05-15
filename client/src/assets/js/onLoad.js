@@ -1,9 +1,12 @@
-(() => {
-
+(async() => {
     const onLoad = async () => {
+
         const usernameBox = document.querySelector('.username');
         //const usernameBox = stdin.firstChild;
         usernameBox.innerHTML = `${rootUserName}@user>`
+        
+        socket.emit('setUsername', {username: rootUserName}); // Set Server-Sided Username
+        
         await typeLine('-------------------------------------------------', 30);
         await typeLine('\u00A0 \u00A0 \u00A0 \u00A0 ROBCO INDUSTRIES UNIFIED OPERATING SYSTEM    ', 90);
         await typeLine('\u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 COPYRIGHT 2075-2075 ROBCO INDUSTRIES', 90);
