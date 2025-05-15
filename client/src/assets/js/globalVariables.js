@@ -1,0 +1,1 @@
+const rootUserName = window.prompt("Please enter your username!");
