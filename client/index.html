@@ -12,13 +12,6 @@
 <body>
 <div class="container">
     <div class="stdout">
-        <!-- <div class="line">-------------------------------------------------</div>
-        <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;ROBCO INDUSTRIES UNIFIED OPERATING SYSTEM    </div>
-        <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COPYRIGHT 2075-2075 ROBCO INDUSTRIES</div>
-        <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Server 1-</div>
-        <div class="line">-------------------------------------------------</div>
-        <div class="line">Connecting to remote host...</div>
-        <div class="line">Welcome, ADMIN!</div> -->
     </div>
 
     <div class="stdin" onselectstart="return false;">
@@ -26,8 +19,17 @@
         <span id="field" contenteditable="" spellcheck="false"></span>
     </div>
 </div>
+<div class="power-button">
+    
+    <input class="power-button" type="checkbox" id="powerToggle">
+    <label for="powerToggle"></label>
+</div>
+<audio loop>
+    <source src="./src/assets/sounds/obj_computerzax_hum_lp.wav" type="audio/wav">
+</audio>
 <script src="./src/assets/js/functions.js"></script>
 <script src="./src/assets/js/onLoad.js"></script>
 <script src="./src/assets/js/socket.js"></script>
+<script src="./src/assets/js/powerToggle.js"></script>
 </body>
 </html>
