@@ -1,15 +1,17 @@
 {
   "dependencies": {
+    "fs": "^0.0.1-security",
     "nodemon": "^3.1.10",
-    "socket.io": "^4.8.1"
+    "path": "^0.12.7",
+    "socket.io": "^4.8.1",
+    "url": "^0.11.4"
   },
   "name": "server",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "nodemon index.js"
+    "start:dev": "nodemon"
   },
   "author": "",
   "license": "ISC",
